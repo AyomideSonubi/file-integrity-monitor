@@ -1,18 +1,38 @@
-# File Integrity Monitor (FIM)
+#  File Integrity Monitor (FIM) – Python Project
 
-A simple Python-based File Integrity Monitor that watches for file changes using hash comparisons.
+This is a  **File Integrity Monitor** written in Python. It monitors one or more files for unauthorized changes by calculating file hashes and logging any detected modifications.
 
-## What is a File Integrity Monitor?
+---
 
-A FIM detects unauthorized changes to files by checking their hash values over time.
+##  What is a File Integrity Monitor (FIM)?
 
-## How It Works
+A **File Integrity Monitor (FIM)** is a tool used in cybersecurity to detect if files have been altered, intentionally or unintentionally. It plays a critical role in:
 
-1. Monitors the hash of `watched_file.txt`
-2. If the file changes, logs the event with a timestamp
-3. Saves logs in the `logs/file_changes.log`
+-  Detecting unauthorized access or tampering
+- Preventing data breaches and insider threats
+-  Ensuring compliance with standards like **PCI-DSS**, **HIPAA**, and **SOX**
 
-## How to Run
+---
+
+## ⚙ How It Works
+
+1. The script calculates a **SHA-256 hash** (digital fingerprint) of each file listed.
+2. It checks the files repeatedly at fixed intervals.
+3. If the hash changes, the script logs the change along with a timestamp.
+4. Logs are stored in the `/log` directory for further analysis.
+
+---
+
+##  Getting Started
+
+### 1. Prerequisites
+
+Ensure you have **Python 3.x** installed. To check: 
+
+```bash
+python --version
+
+How to Run 
 
 1. Run: `python fim.py`
 2. Modify the file: `watched_file.txt`
